@@ -1,0 +1,19 @@
+<h1>Index Page</h1>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+<th>Placeholder</th>
+</tr>
+<body>
+<% @articles.each do |article| %>
+    <tr>
+    <td><%= article.title %></td>
+    <td><%= article.description %></td>
+    <td>Placeholder</td>
+    </tr>
+<% end %>    
+</body>
+</thead>
+</table>
