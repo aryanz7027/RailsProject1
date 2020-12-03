@@ -1,16 +1,3 @@
 <h1>Edit an article</h1>
-<% if @article.errors.any? %>
-<h2>Following errors encountered</h2>
-     <ul>
-    <% @article.errors.full_messages.each do |msg| %>  
-         <li><%= msg %></li> 
-    <% end %>
-    </ul>
-<% end %>
-<%= form_with(model: @article, local: true ) do |f| %>
-<p><%= f.label :title %><br/>
-<p><%= f.text_field :title %></p><br/>
-<p><%= f.label :description %> <br/>
-<p><%= f.text_area :description %></p><br/>
-<p><%= f.submit %></p>
-<% end %>
+<%= render 'form' %>
+<%= link_to 'Cancel editing and Return to article listing',articles_path %>
