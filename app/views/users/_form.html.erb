@@ -1,0 +1,15 @@
+<%= render 'shared/errors', obj: @user %>
+
+
+<%= form_with(model: @user, local: true ) do |f| %>
+    <p><%= f.label :username %><br/>
+    <p><%= f.text_field :username, placeholder: "Enter username" %></p><br/>
+
+    <p><%= f.label :email %><br/>
+    <p><%= f.email_field :email, placeholder: "Enter E-mail" %></p><br/>
+
+    <p><%= f.label :password %> <br/>
+    <p><%= f.password_field :password, placeholder: "Choose password" %></p><br/>
+
+    <p><%= f.submit 'Signup' %></p>
+    <% end %>
