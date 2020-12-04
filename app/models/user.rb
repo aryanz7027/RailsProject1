@@ -6,4 +6,5 @@ class User < ApplicationRecord
     VALID_EAIL_REGEX  = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true,
                     uniqueness: { case_sensitive: false }, length: {maximum: 105}, format: {with: VALID_EAIL_REGEX}
-end
+has_secure_password
+                end
