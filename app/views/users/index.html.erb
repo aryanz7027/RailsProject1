@@ -1,0 +1,27 @@
+<h1>Users</h1>
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Profile picture</th>
+<th>Email</th>
+<th>userid</th>
+<th>Number of articles</th>
+<th colspan="2">Actions</th>
+</tr>
+<body>
+<% @users.each do |user| %>
+    <tr>
+    <td><%= user.username %></td>
+   <td> <%= link_to gravtar_for(user, size: 50), user_path(user) %></td>
+    <td><%= user.email %></td>
+    <td><%= user.id %></td>
+    <td><%= pluralize(user.articles.count,'article') %></td>
+    <td><%= link_to 'View Profile', user_path(user) %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    </tr>
+<% end %>  
+</body>
+</thead>
+</table>
+<p><%= link_to 'Create User',signup_path %>  </p>
